@@ -12,7 +12,7 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
-    private String dataNascimento;
+    public String dataNascimento;
     private String sexo;
     
     public Usuario(String nome, String email, String senha, String dataNascimento, String sexo){

@@ -31,8 +31,6 @@ public class TelaDePerfil extends javax.swing.JFrame {
         voltarMenuButton = new javax.swing.JButton();
         emailLabel = new javax.swing.JLabel();
         emailPerfil = new javax.swing.JLabel();
-        idadeLabel = new javax.swing.JLabel();
-        idadePerfil = new javax.swing.JLabel();
         sexoLabel = new javax.swing.JLabel();
         sexoPerfil = new javax.swing.JLabel();
         nomeLabel = new javax.swing.JLabel();
@@ -46,7 +44,7 @@ public class TelaDePerfil extends javax.swing.JFrame {
         alterarButton.setBackground(new java.awt.Color(0, 0, 0));
         alterarButton.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         alterarButton.setForeground(new java.awt.Color(255, 255, 255));
-        alterarButton.setText("ALTERAR DADOS");
+        alterarButton.setText("ALTERAR SENHA");
         alterarButton.setBorder(null);
         alterarButton.setContentAreaFilled(false);
         alterarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -60,6 +58,7 @@ public class TelaDePerfil extends javax.swing.JFrame {
         getContentPane().add(alterarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 170, 40));
 
         voltarMenuButton.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        voltarMenuButton.setForeground(new java.awt.Color(51, 51, 51));
         voltarMenuButton.setText("VOLTAR");
         voltarMenuButton.setContentAreaFilled(false);
         voltarMenuButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -75,35 +74,24 @@ public class TelaDePerfil extends javax.swing.JFrame {
         emailLabel.setForeground(new java.awt.Color(153, 153, 153));
         emailLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         emailLabel.setText("''");
-        getContentPane().add(emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 190, 390, -1));
+        getContentPane().add(emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 390, 30));
 
         emailPerfil.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         emailPerfil.setForeground(new java.awt.Color(153, 153, 153));
         emailPerfil.setText("EMAIL");
-        getContentPane().add(emailPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, -1, -1));
-
-        idadeLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        idadeLabel.setForeground(new java.awt.Color(153, 153, 153));
-        idadeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        idadeLabel.setText("00");
-        getContentPane().add(idadeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 120, -1));
-
-        idadePerfil.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        idadePerfil.setForeground(new java.awt.Color(153, 153, 153));
-        idadePerfil.setText("IDADE");
-        getContentPane().add(idadePerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, -1, -1));
+        getContentPane().add(emailPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, -1, 20));
 
         sexoLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         sexoLabel.setForeground(new java.awt.Color(153, 153, 153));
         sexoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sexoLabel.setText("''");
         sexoLabel.setToolTipText("");
-        getContentPane().add(sexoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, 60, -1));
+        getContentPane().add(sexoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 60, 30));
 
         sexoPerfil.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         sexoPerfil.setForeground(new java.awt.Color(153, 153, 153));
         sexoPerfil.setText("SEXO");
-        getContentPane().add(sexoPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, -1, -1));
+        getContentPane().add(sexoPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, -1, 20));
 
         nomeLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         nomeLabel.setForeground(new java.awt.Color(153, 153, 153));
@@ -111,14 +99,15 @@ public class TelaDePerfil extends javax.swing.JFrame {
         nomeLabel.setText("''");
         nomeLabel.setAlignmentY(0.0F);
         nomeLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(nomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 400, -1));
+        getContentPane().add(nomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 400, 30));
 
         nomePerfil.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         nomePerfil.setForeground(new java.awt.Color(153, 153, 153));
         nomePerfil.setText("NOME");
-        getContentPane().add(nomePerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, -1, -1));
+        getContentPane().add(nomePerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, -1, 20));
 
         TituloPerfil.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        TituloPerfil.setForeground(new java.awt.Color(51, 51, 51));
         TituloPerfil.setText("Perfil");
         getContentPane().add(TituloPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, -1, -1));
 
@@ -130,6 +119,12 @@ public class TelaDePerfil extends javax.swing.JFrame {
 
     private void alterarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarButtonActionPerformed
 
+        TelaAlterarSenha telaAlterar = new TelaAlterarSenha();
+         telaAlterar.setVisible(true);
+         this.dispose();
+        
+        
+        
     }//GEN-LAST:event_alterarButtonActionPerformed
 
     private void voltarMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarMenuButtonActionPerformed
@@ -176,8 +171,6 @@ public class TelaDePerfil extends javax.swing.JFrame {
     private javax.swing.JButton alterarButton;
     public static javax.swing.JLabel emailLabel;
     private javax.swing.JLabel emailPerfil;
-    public static javax.swing.JLabel idadeLabel;
-    private javax.swing.JLabel idadePerfil;
     private javax.swing.JLabel jLabel1;
     public static javax.swing.JLabel nomeLabel;
     private javax.swing.JLabel nomePerfil;

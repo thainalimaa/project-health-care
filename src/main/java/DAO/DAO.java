@@ -182,11 +182,11 @@ public class DAO {
         }       
     }
     
-   /* public void logar(Usuario usuario) throws Exception{
+      public void logar(Usuario usuario) throws Exception{
         
-       String sql = "select * from tb_cadastro where email = ? and senha = ?";
+       String sql = "select * from Pessoa where email = ? and senha = ?";
        try (Connection conn = ConnectionDatabase.getConnection();
-       PreparedStatement ps = conn.prepareStatement(sql);
+       PreparedStatement ps = conn.prepareStatement(sql)){
                
        ps.setString(1, usuario.getEmail());
        ps.setString(2, usuario.getSenha());
@@ -194,23 +194,60 @@ public class DAO {
        ResultSet rs = ps.executeQuery();
        
        if(rs.next()){
+           
            String perfil = " ";
            
            if(perfil.equals("admin")){
            //TelaPerfil telaPerfil = new TelaPerfil();
            //telaPerfil.setVisible(true);
            } else {
-            TelaPerfil telaPerfil = new TelaPerfil();
+            TelaDePerfil telaPerfil = new TelaDePerfil();
              telaPerfil.setVisible(true);
-             TelaPerfil.nomeLabel.setText(rs.getString(2));
-             TelaPerfil.emailLabel.setText(rs.getString(3));
-             TelaPerfil.idadeLabel.setText(rs.getString(5));
-             TelaPerfil.sexoLabel.setText(rs.getString(6));
+             TelaDePerfil.nomeLabel.setText(rs.getString(2));
+             TelaDePerfil.emailLabel.setText(rs.getString(3));
+             TelaDePerfil.sexoLabel.setText(rs.getString(6));
            }
            
        } else {
          JOptionPane.showMessageDialog(null, "Usuario e/ou senha inválido(s)!");
 
-       }*/
-        
+       }
+       }
+      }
+      
+      public static void atualizarSenhaPerfil(Usuario usuario) throws Exception {
+        String sql = "UPDATE Pessoa SET senha = ? WHERE email = ?; ";
+
+        try (Connection conn = ConnectionDatabase.obtemConexao();
+             PreparedStatement ps = conn.prepareStatement(sql)){
+            ps.setString(1, usuario.getSenha());
+            ps.setString(2, usuario.getEmail());
+
+            
+            int rowsAffected = ps.executeUpdate();
+            if(rowsAffected > 0) {
+                System.out.println("Atualizado a senha usuario");
+            } else{
+                System.out.println("Erro durante a atualização da nova senha.");
+            }
+        } 
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
+      
+      public boolean senhaIgual (Usuario usuario) throws Exception {
+        String sql = "select * from Pessoa where email = ? and senha = ?";
+        try (Connection conn = ConnectionDatabase.obtemConexao();
+             PreparedStatement ps = conn.prepareStatement(sql)){
+            ps.setString(1, usuario.getEmail());
+            ps.setString(2, usuario.getSenha());
+            try (ResultSet rs = ps.executeQuery()) {
+                return rs.next();         
+                }
+        }
+    }
+      
+      
+      
+}

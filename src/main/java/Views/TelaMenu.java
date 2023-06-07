@@ -104,11 +104,7 @@ public class TelaMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PerfilButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerfilButtonActionPerformed
-        
-        TelaDePerfil telaPerfil = new TelaDePerfil(); 
-        telaPerfil.setVisible(true);
-        this.dispose();
-        
+
         String email = TelaInicialLogin.emailTextField.getText();
         String senha =  new String (TelaInicialLogin.senhaPasswordField.getPassword());
         
@@ -117,7 +113,8 @@ public class TelaMenu extends javax.swing.JFrame {
 
         
         try {
-            dao.existeUsuario(usuario);
+            dao.logar(usuario);
+            this.dispose();
             
         } catch (Exception ex) {
             Logger.getLogger(TelaMenu.class.getName()).log(Level.SEVERE, null, ex);

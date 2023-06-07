@@ -55,6 +55,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup2 = new javax.swing.ButtonGroup();
         nomeLabel = new javax.swing.JLabel();
         TituloCadastro = new javax.swing.JLabel();
         inputNome = new javax.swing.JTextField();
@@ -83,6 +84,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         getContentPane().add(nomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, -1, -1));
 
         TituloCadastro.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        TituloCadastro.setForeground(new java.awt.Color(51, 51, 51));
         TituloCadastro.setText("Cadastrar-se");
         getContentPane().add(TituloCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, -1, -1));
 
@@ -125,6 +127,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         sexoLabel.setText("SEXO");
         getContentPane().add(sexoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 280, -1, -1));
 
+        buttonGroup2.add(radioFem);
         radioFem.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         radioFem.setForeground(new java.awt.Color(153, 153, 153));
         radioFem.setText("Feminino");
@@ -153,6 +156,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         });
         getContentPane().add(cadastroButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 290, 50));
 
+        buttonGroup2.add(radioMasc);
         radioMasc.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         radioMasc.setForeground(new java.awt.Color(153, 153, 153));
         radioMasc.setText("Masculino");
@@ -183,6 +187,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         getContentPane().add(inputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 450, 30));
 
         voltarButton.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        voltarButton.setForeground(new java.awt.Color(51, 51, 51));
         voltarButton.setText("VOLTAR");
         voltarButton.setContentAreaFilled(false);
         voltarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -339,6 +344,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField Teste;
     private javax.swing.JLabel TituloCadastro;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton cadastroButton;
     private javax.swing.JLabel dtnascimentoLabel;
     private javax.swing.JLabel emailLabel;

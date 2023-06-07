@@ -4,6 +4,8 @@ import Views.TelaEsqueceuSenha;
 import Utils.ValidEmailAddress;
 import DAO.DAO;
 import Model.Usuario;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -202,7 +204,21 @@ public class TelaInicialLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
+           
         this.dispose();
+        
+        /*String email = TelaInicialLogin.emailTextField.getText();
+        String senha =  new String (TelaInicialLogin.senhaPasswordField.getPassword());
+        
+        Usuario usuario = new Usuario(email, senha);
+        DAO dao = new DAO();
+
+        try {
+            dao.logar(usuario);
+        } catch (Exception ex) {
+            Logger.getLogger(TelaInicialLogin.class.getName()).log(Level.SEVERE, null, ex);
+     */  
+
     }//GEN-LAST:event_ExitButtonActionPerformed
 
     private void senhaPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaPasswordFieldActionPerformed
