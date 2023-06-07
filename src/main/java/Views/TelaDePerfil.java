@@ -133,7 +133,9 @@ public class TelaDePerfil extends javax.swing.JFrame {
     }//GEN-LAST:event_alterarButtonActionPerformed
 
     private void voltarMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarMenuButtonActionPerformed
-        // TODO add your handling code here:
+        TelaMenu telaMenu = new TelaMenu(); 
+        telaMenu.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_voltarMenuButtonActionPerformed
 
     /**

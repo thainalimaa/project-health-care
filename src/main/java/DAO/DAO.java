@@ -4,6 +4,7 @@ package DAO;
 import Model.RegistroCorporal;
 import Model.Usuario;
 import Connection.ConnectionDatabase;
+import Model.UsuarioRead;
 import Views.TelaDePerfil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -182,35 +183,24 @@ public class DAO {
         }       
     }
     
-   /* public void logar(Usuario usuario) throws Exception{
+     public void removerPessoa(UsuarioRead usuario){
+        String sql = "DELETE FROM Pessoa WHERE idPessoa = ?; ";
+        try (Connection conn = ConnectionDatabase.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)){
+            ps.setInt(1, usuario.getIdPessoa());
+            
+            int rowsAffected = ps.executeUpdate();
+            if(rowsAffected > 0) {
+                JOptionPane.showMessageDialog(null, "Dado excluido com sucesso.", 
+                        "Informação:", JOptionPane.INFORMATION_MESSAGE);            
+            } else{
+                JOptionPane.showMessageDialog(null, "Erro tentar excluir um registro corporal.", 
+                        "Opss, algo deu errado:", JOptionPane.ERROR_MESSAGE);  
+            }
+        } 
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    } 
         
-       String sql = "select * from tb_cadastro where email = ? and senha = ?";
-       try (Connection conn = ConnectionDatabase.getConnection();
-       PreparedStatement ps = conn.prepareStatement(sql);
-               
-       ps.setString(1, usuario.getEmail());
-       ps.setString(2, usuario.getSenha());
-       
-       ResultSet rs = ps.executeQuery();
-       
-       if(rs.next()){
-           String perfil = " ";
-           
-           if(perfil.equals("admin")){
-           //TelaPerfil telaPerfil = new TelaPerfil();
-           //telaPerfil.setVisible(true);
-           } else {
-            TelaPerfil telaPerfil = new TelaPerfil();
-             telaPerfil.setVisible(true);
-             TelaPerfil.nomeLabel.setText(rs.getString(2));
-             TelaPerfil.emailLabel.setText(rs.getString(3));
-             TelaPerfil.idadeLabel.setText(rs.getString(5));
-             TelaPerfil.sexoLabel.setText(rs.getString(6));
-           }
-           
-       } else {
-         JOptionPane.showMessageDialog(null, "Usuario e/ou senha inválido(s)!");
-
-       }*/
-        
-    }
+}

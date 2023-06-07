@@ -159,6 +159,8 @@ public class TelaInicialLogin extends javax.swing.JFrame {
         ValidEmailAddress ValidEmail = new ValidEmailAddress();
         
         TelaMenu telaMenu = new TelaMenu(); 
+        TelaMenuAdmin telaMenuAdmin = new TelaMenuAdmin(); 
+
 
         if (!((ValidEmail.isValidEmailAddress(email)))) {
             JOptionPane.showMessageDialog(null, "Por favor, digite um email válido.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -177,10 +179,20 @@ public class TelaInicialLogin extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "A senha inserida está incorreta.", "Ops, tente novamente.",
                         JOptionPane.ERROR_MESSAGE);
                     }
-                    else 
-                        telaMenu.setVisible(true);
+                    else{
+                        
+                        if (email.equals("admin@gmail.com")){
+                            telaMenuAdmin.setVisible(true);
+                            this.dispose();
+                        }
+                        else{
+                            telaMenu.setVisible(true);
+                            this.dispose();
+                        }
                     }
                 }
+            }
+                
             catch (Exception e) {
                 JOptionPane.showMessageDialog (null, "ups, tente mais tarde");
                 e.printStackTrace();
