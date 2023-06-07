@@ -1,11 +1,5 @@
 package Views;
 
-import DAO.DAO;
-import Model.Usuario;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -15,12 +9,12 @@ import java.util.logging.Logger;
  *
  * @author thaina.matos
  */
-public class TelaMenu extends javax.swing.JFrame {
+public class TelaMenuAdmin extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaRegistro
      */
-    public TelaMenu() {
+    public TelaMenuAdmin() {
         super("Menu principal");
         initComponents();
         this.setLocationRelativeTo(null);
@@ -38,8 +32,10 @@ public class TelaMenu extends javax.swing.JFrame {
         menuTitle = new javax.swing.JLabel();
         PerfilButton = new javax.swing.JButton();
         RegisterButton = new javax.swing.JButton();
+        controleButton = new javax.swing.JButton();
         ExitButton = new javax.swing.JButton();
         menuDescrip = new javax.swing.JLabel();
+        DashboardButton = new javax.swing.JButton();
         RegisterImage = new javax.swing.JLabel();
         RegisterButton1 = new javax.swing.JButton();
 
@@ -71,7 +67,18 @@ public class TelaMenu extends javax.swing.JFrame {
                 RegisterButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(RegisterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 320, 60));
+        getContentPane().add(RegisterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 320, 60));
+
+        controleButton.setBackground(new java.awt.Color(81, 135, 81));
+        controleButton.setFont(new java.awt.Font("Heiti TC", 1, 14)); // NOI18N
+        controleButton.setForeground(new java.awt.Color(255, 255, 255));
+        controleButton.setText("CONTROLE DE USUÁRIOS");
+        controleButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                controleButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(controleButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 320, 60));
 
         ExitButton.setBackground(new java.awt.Color(153, 0, 0));
         ExitButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -82,11 +89,17 @@ public class TelaMenu extends javax.swing.JFrame {
                 ExitButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(ExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, 120, 40));
+        getContentPane().add(ExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, 120, 30));
 
         menuDescrip.setFont(new java.awt.Font("Heiti TC", 0, 13)); // NOI18N
         menuDescrip.setText("Deseja acessar:");
-        getContentPane().add(menuDescrip, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, -1, -1));
+        getContentPane().add(menuDescrip, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 110, -1));
+
+        DashboardButton.setBackground(new java.awt.Color(81, 135, 81));
+        DashboardButton.setFont(new java.awt.Font("Heiti TC", 1, 14)); // NOI18N
+        DashboardButton.setForeground(new java.awt.Color(255, 255, 255));
+        DashboardButton.setText("DASHBOARD");
+        getContentPane().add(DashboardButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 320, 60));
 
         RegisterImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/TelaMenu.jpg"))); // NOI18N
         getContentPane().add(RegisterImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -100,21 +113,7 @@ public class TelaMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PerfilButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerfilButtonActionPerformed
-
-        String email = TelaInicialLogin.emailTextField.getText();
-        String senha =  new String (TelaInicialLogin.senhaPasswordField.getPassword());
-        
-        Usuario usuario = new Usuario(email, senha);
-        DAO dao = new DAO();
-
-        try {
-            dao.logar(usuario);
-            this.dispose();
-            
-        } catch (Exception ex) {
-            Logger.getLogger(TelaMenu.class.getName()).log(Level.SEVERE, null, ex);
-        }
- 
+        // TODO add your handling code here:
     }//GEN-LAST:event_PerfilButtonActionPerformed
 
     private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
@@ -122,10 +121,16 @@ public class TelaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_ExitButtonActionPerformed
 
     private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterButtonActionPerformed
-        TelaRegistro telaRegistro = new TelaRegistro(); 
+        TelaRegistroAdmin telaRegistro = new TelaRegistroAdmin(); 
         telaRegistro.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_RegisterButtonActionPerformed
+
+    private void controleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_controleButtonActionPerformed
+        TelaControle telaControle = new TelaControle(); 
+        telaControle.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_controleButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,31 +149,39 @@ public class TelaMenu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaMenuAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaMenuAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaMenuAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaMenuAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaMenu().setVisible(true);
+                new TelaMenuAdmin().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton DashboardButton;
     private javax.swing.JButton ExitButton;
     private javax.swing.JButton PerfilButton;
     private javax.swing.JButton RegisterButton;
     private javax.swing.JButton RegisterButton1;
     private javax.swing.JLabel RegisterImage;
+    private javax.swing.JButton controleButton;
     private javax.swing.JLabel menuDescrip;
     private javax.swing.JLabel menuTitle;
     // End of variables declaration//GEN-END:variables

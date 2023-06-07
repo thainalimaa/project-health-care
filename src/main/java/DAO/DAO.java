@@ -4,11 +4,11 @@ package DAO;
 import Model.RegistroCorporal;
 import Model.Usuario;
 import Connection.ConnectionDatabase;
+import Model.UsuarioRead;
 import Views.TelaDePerfil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import java.util.List;
 import java.util.ArrayList;
@@ -236,18 +236,23 @@ public class DAO {
         }
     }
       
-      public boolean senhaIgual (Usuario usuario) throws Exception {
-        String sql = "select * from Pessoa where email = ? and senha = ?";
-        try (Connection conn = ConnectionDatabase.obtemConexao();
+     public void removerPessoa(UsuarioRead usuario){
+        String sql = "DELETE FROM Pessoa WHERE idPessoa = ?; ";
+        try (Connection conn = ConnectionDatabase.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)){
-            ps.setString(1, usuario.getEmail());
-            ps.setString(2, usuario.getSenha());
-            try (ResultSet rs = ps.executeQuery()) {
-                return rs.next();         
-                }
+            ps.setInt(1, usuario.getIdPessoa());
+            
+            int rowsAffected = ps.executeUpdate();
+            if(rowsAffected > 0) {
+                JOptionPane.showMessageDialog(null, "Dado excluido com sucesso.", 
+                        "Informação:", JOptionPane.INFORMATION_MESSAGE);            
+            } else{
+                JOptionPane.showMessageDialog(null, "Erro tentar excluir um registro corporal.", 
+                        "Opss, algo deu errado:", JOptionPane.ERROR_MESSAGE);  
+            }
+        } 
+        catch(Exception e){
+            e.printStackTrace();
         }
-    }
-      
-      
-      
+    } 
 }
