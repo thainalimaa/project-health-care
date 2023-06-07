@@ -250,7 +250,7 @@ public class TelaRegistroAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_adicionarButton1ActionPerformed
 
     private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
-        TelaMenu telaMenu = new TelaMenu(); 
+        TelaMenuAdmin telaMenu = new TelaMenuAdmin(); 
         telaMenu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_menuButtonActionPerformed
