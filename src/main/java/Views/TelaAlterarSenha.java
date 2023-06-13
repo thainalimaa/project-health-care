@@ -112,6 +112,8 @@ public class TelaAlterarSenha extends javax.swing.JFrame {
             if(novaSenha.getText().isEmpty() == false) {
         try {
             dao.atualizarSenhaPerfil(usuario);
+            JOptionPane.showMessageDialog(null, "Senha alterada com sucesso.", "Alteração realizada", JOptionPane.INFORMATION_MESSAGE);
+
         } catch (Exception ex) {
             Logger.getLogger(TelaAlterarSenha.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "Não foi possível alterar a senha.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -127,7 +129,9 @@ public class TelaAlterarSenha extends javax.swing.JFrame {
     }//GEN-LAST:event_SalvarButtonActionPerformed
 
     private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
-        // TODO add your handling code here:
+        TelaMenu telaMenu = new TelaMenu(); 
+        telaMenu.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_voltarButtonActionPerformed
 
     /**

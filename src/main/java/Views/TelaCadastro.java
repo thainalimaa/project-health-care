@@ -277,6 +277,9 @@ public class TelaCadastro extends javax.swing.JFrame {
 
                             dao.cadastrar(usuario);
                             JOptionPane.showMessageDialog (null, "Usuario cadastrado");
+                            TelaInicialLogin telaLogin = new TelaInicialLogin(); 
+                            telaLogin.setVisible(true);
+                            this.dispose();
 
                         } else {
                             JOptionPane.showMessageDialog(null, "Email já está sendo utilizado, tente outro ou faça login", "Email já utilziado",

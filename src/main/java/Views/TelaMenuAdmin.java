@@ -30,7 +30,6 @@ public class TelaMenuAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         menuTitle = new javax.swing.JLabel();
-        PerfilButton = new javax.swing.JButton();
         RegisterButton = new javax.swing.JButton();
         controleButton = new javax.swing.JButton();
         ExitButton = new javax.swing.JButton();
@@ -47,17 +46,6 @@ public class TelaMenuAdmin extends javax.swing.JFrame {
         menuTitle.setText("MENU");
         getContentPane().add(menuTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, -1, -1));
 
-        PerfilButton.setBackground(new java.awt.Color(81, 135, 81));
-        PerfilButton.setFont(new java.awt.Font("Heiti TC", 1, 14)); // NOI18N
-        PerfilButton.setForeground(new java.awt.Color(255, 255, 255));
-        PerfilButton.setText("PERFIL");
-        PerfilButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PerfilButtonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(PerfilButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 320, 60));
-
         RegisterButton.setBackground(new java.awt.Color(81, 135, 81));
         RegisterButton.setFont(new java.awt.Font("Heiti TC", 1, 14)); // NOI18N
         RegisterButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -67,7 +55,7 @@ public class TelaMenuAdmin extends javax.swing.JFrame {
                 RegisterButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(RegisterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 320, 60));
+        getContentPane().add(RegisterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 320, 60));
 
         controleButton.setBackground(new java.awt.Color(81, 135, 81));
         controleButton.setFont(new java.awt.Font("Heiti TC", 1, 14)); // NOI18N
@@ -78,7 +66,7 @@ public class TelaMenuAdmin extends javax.swing.JFrame {
                 controleButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(controleButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 320, 60));
+        getContentPane().add(controleButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 320, 60));
 
         ExitButton.setBackground(new java.awt.Color(153, 0, 0));
         ExitButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -89,7 +77,7 @@ public class TelaMenuAdmin extends javax.swing.JFrame {
                 ExitButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(ExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, 120, 30));
+        getContentPane().add(ExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, 120, 30));
 
         menuDescrip.setFont(new java.awt.Font("Heiti TC", 0, 13)); // NOI18N
         menuDescrip.setText("Deseja acessar:");
@@ -99,7 +87,7 @@ public class TelaMenuAdmin extends javax.swing.JFrame {
         DashboardButton.setFont(new java.awt.Font("Heiti TC", 1, 14)); // NOI18N
         DashboardButton.setForeground(new java.awt.Color(255, 255, 255));
         DashboardButton.setText("DASHBOARD");
-        getContentPane().add(DashboardButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 320, 60));
+        getContentPane().add(DashboardButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 320, 60));
 
         RegisterImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/TelaMenu.jpg"))); // NOI18N
         getContentPane().add(RegisterImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -111,10 +99,6 @@ public class TelaMenuAdmin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void PerfilButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerfilButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PerfilButtonActionPerformed
 
     private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
         this.dispose();
@@ -177,7 +161,6 @@ public class TelaMenuAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DashboardButton;
     private javax.swing.JButton ExitButton;
-    private javax.swing.JButton PerfilButton;
     private javax.swing.JButton RegisterButton;
     private javax.swing.JButton RegisterButton1;
     private javax.swing.JLabel RegisterImage;
